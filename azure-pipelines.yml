@@ -11,7 +11,7 @@ steps:
 
 
 - task: PowerShell@2
-  displayName: node install
+  displayName: NPM install
   inputs:
     targetType: 'inline'
     script: 'npm install'
