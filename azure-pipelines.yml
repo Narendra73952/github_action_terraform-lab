@@ -3,8 +3,23 @@ trigger: none
 pool: mydell-laptop
 
 steps:
+- task: NodeTool@0
+  displayName: node download
+  inputs:
+    versionSource: 'spec'
+    versionSpec: '16.x'
+
 
 - task: PowerShell@2
+  displayName: node install
   inputs:
     targetType: 'inline'
-    script: 'Write-Host "Hello World"'
+    script: 'npm install'
+
+- task: PowerShell@2
+  displayName: npm run build
+  inputs:
+    targetType: 'inline'
+    script: 'npm run build'
+
+    
